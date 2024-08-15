@@ -67,4 +67,4 @@ $
 
 ## Authors
 
-Angela Enriquez Garcia, Phon Soumpholphakdy,
+Angela Enriquez Garcia, Phon Soumpholphakdy, Gaurav Dhoundiyal
