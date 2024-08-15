@@ -7,6 +7,13 @@ The program provides support for both interactive and non-interactive modes, car
 ## Ouput
 The program's output must exactly match /bin/sh, except for error messages, where the program name should be replaced with the executable's actual name, usually ./hsh.
 
+## Features
+* Interactive Mode: Prompts the user for input, executes commands, and displays the prompt again after execution.
+* Non-Interactive Mode: Reads commands from a file or standard input, executes them, and exits after execution.
+* Error Handling: When an executable cannot be found, an error message is printed. The error output follows the format of /bin/sh, with the program's name dynamically replaced by the actual name of the shell.
+* End of File (Ctrl+D): Properly handles the EOF condition.
+
+
 ### Example
 ```c
 $ echo "qwerty" | ./hsh
@@ -60,3 +67,4 @@ $
 
 ## Authors
 
+Angela Enriquez Garcia, Phon Soumpholphakdy,
