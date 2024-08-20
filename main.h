@@ -11,5 +11,7 @@
 #include <string.h>
 #include <sys/stat.h>
 
+/*enviroment variable*/
+extern char **environ;
 
 #endif /* MAIN_H */
