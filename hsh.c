@@ -53,6 +53,7 @@ int main(void)
 			wait(&status);
 		}
 	}
+	free(command);
 	free (line);
 	return (0);
 }
