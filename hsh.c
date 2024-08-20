@@ -13,6 +13,7 @@ int main(void)
 	pid_t child_pid;
 	int status, i;
 	char *delimeter = "\t\n";
+	char **env = NULL;
 	while (1)
 	{
 		write(STDOUT_FILENO, "SimpleShell$ ", 13);
@@ -42,9 +43,9 @@ int main(void)
 
 		child_pid = fork();
 
-		if (!child_pid)
+		if (child_pid == 0)
 		{
-			if (execve(command[0], command, NULL) == -1)
+			if (execve(command[0], command, env) == -1)
 			{
 				perror("Could not execute");
 				exit(1);
