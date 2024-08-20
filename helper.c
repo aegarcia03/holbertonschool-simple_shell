@@ -29,13 +29,8 @@ char *read_command(void)
 	if (nread == -1)
 	{
 		free(line);
-		if (feof(stdin))
+		if (nread == - 1)
 		{
-			return (NULL);
-		}
-		else
-		{
-			perror("EXITING SHELL");
 			exit(0);
 		}
 	}
