@@ -79,9 +79,9 @@ char *read_command(void)
 
 	if (nread == -1)
 	{	
-		free(line)
+		free(line);
 		perror("EXITING SHELL");
-		exit(1)
+		exit(1);
 	}
 	return (line);
 }
@@ -102,7 +102,7 @@ char **tokenize_command(char *command)
 		perror("Error: Allocation failed");
 		exit(1);
 	}
-	token = strtok(line, delimeters);
+	token = strtok(command, delimeters);
 	
 	i = 0;
 
@@ -135,7 +135,7 @@ void execute_command(char **command)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		perror("Error child_pid")
+		perror("Error child_pid");
 			exit(1);
 	}
 

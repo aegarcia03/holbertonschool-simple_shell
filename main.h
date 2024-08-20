@@ -24,5 +24,6 @@ int _strlen(char *s);
 char *read_command(void);
 void execute_command(char **command);
 void free_memory(char **command);
+char **tokenize_command(char *command);
 
 #endif /* MAIN_H */
