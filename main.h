@@ -18,5 +18,11 @@ extern char **environ;
 
 void display_prompt(void);
 void _printf(char *prompt);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
+char *read_command(void);
+void execute_command(char **command);
+void free_memory(char **command);
 
 #endif /* MAIN_H */
