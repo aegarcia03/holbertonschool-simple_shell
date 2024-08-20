@@ -12,7 +12,7 @@ int main(void)
 	ssize_t nread;
 	pid_t child_pid;
 	int status, i;
-	char *delimeter = " :'\n''\t'";
+	char *delimeter = "\t\n";
 	while (1)
 	{
 		write(STDOUT_FILENO, "SimpleShell$ ", 13);
@@ -25,10 +25,13 @@ int main(void)
 			exit(1);
 		}
 		token = strtok(line, delimeter);
-
 		command = malloc(sizeof(char *) * 1024);
+		if (!command)
+		{
+			perror("Error: Memory allocation failed");
+			exit(1);
+		}
 		i = 0;
-
 		while (token != NULL)
 		{
 			command[i] = strdup(token);
