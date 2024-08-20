@@ -14,4 +14,9 @@
 /*enviroment variable*/
 extern char **environ;
 
+/*helper functions*/
+
+void display_prompt(void);
+void _printf(char *prompt);
+
 #endif /* MAIN_H */
