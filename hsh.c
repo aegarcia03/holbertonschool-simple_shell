@@ -25,8 +25,8 @@ int main(void)
 
         i = 0;
         
-	while ((token = strtok_r(line, delimeter, &line))) {
-            command = realloc(command, (i + 1) * sizeof(char *));
+	while ((token = strtok(line, delimeter))) {
+            command = malloc(sizeof(char *) * 1024);
             if (!command) {
                 perror("Error: Memory allocation failed");
                 exit(1);
@@ -36,7 +36,7 @@ int main(void)
         command[i] = NULL;
         child_pid = fork();
         if (child_pid == 0) {
-            if (execvp(command[0], command) == -1) {
+            if (execve(command[0], command, NULL) == -1) {
                 perror("Could not execute");
                 exit(1);
             }
@@ -44,8 +44,9 @@ int main(void)
             wait(NULL);
         }
     }
-    free(line);
-    return 0;
+	free(command);
+	free(line);
+	return 0;
 }
 
 
