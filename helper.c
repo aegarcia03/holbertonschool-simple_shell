@@ -1,61 +1,10 @@
 #include "main.h"
-/*
- * _strlen - ..
- * Return: ..
- */
-int _strlen(char *s)
-{
-	int len = 0;
-	
-	while(s[len])
-		len++;
-	return(len);
-}
-/**
- * _strcpy - ..
- * @dest: ..
- * @src: ...
- *
- * Return: ...
- */
-char* _strcpy(char *dest, char*src)
-{
-	int i = 0;
-	
-	while (src[i])
-	{
-		dest[i] = src[i];
-			i++;
-	}
-	dest[i] = '\0';
-	return(dest);
-}
-/**
- * _strcat - ...
- * @dest: ..
- * @src: ...
- *
- * Return: ...
- */
-char* _strcat(char *dest, char *src)
-{	
-	int dest_len = _strlen(dest);
-	int i = 0;
-
-	while(src[i])
-	{
-		dest[dest_len + i] = src[i];
-		i++;
-	}
-	dest[dest_len + i] = '\0';
-	return(dest);
-}
 /**
  * _printf - ...
  */
 void _printf(char *prompt)
 {
-	write(STDOUT_FILENO, prompt, _strlen(prompt));
+	write(STDOUT_FILENO, prompt, strlen(prompt));
 }
 /**
  * display_prompt - ...
@@ -78,10 +27,17 @@ char *read_command(void)
 	nread = getline(&line, &len, stdin);
 
 	if (nread == -1)
-	{	
+	{
 		free(line);
-		perror("EXITING SHELL");
-		exit(1);
+		if (feof(stdin))
+		{
+			return (NULL);
+		}
+		else
+		{
+			perror("EXITING SHELL");
+			exit(0);
+		}
 	}
 	return (line);
 }
@@ -115,8 +71,8 @@ char **tokenize_command(char *command)
 			perror("Error: Allocation failed");
 			exit(1);
 		}
-		token = strtok(NULL, delimeters);
 		i++;
+		token = strtok(NULL, delimeters);
 
 	}
 	tokens[i] = NULL;

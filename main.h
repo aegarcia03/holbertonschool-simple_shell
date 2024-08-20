@@ -26,5 +26,6 @@ char *read_command(void);
 void execute_command(char **command);
 void free_memory(char **command);
 char **tokenize_command(char *command);
+void sigint_handler(int sig);
 
 #endif /* MAIN_H */
