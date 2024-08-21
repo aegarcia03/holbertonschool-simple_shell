@@ -29,7 +29,7 @@ char *read_command(void)
  * tokenize_command- ..
  *
  * Return: ...
- */
+ *
 char **tokenize_command(char *command)
 {
 	char **tokens = malloc(sizeof(char *) * 1024);
@@ -63,7 +63,6 @@ char **tokenize_command(char *command)
 
 	return(tokens);
 }
-/**
  * execute_command - fork a child process to execute command
  *
  */
