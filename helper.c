@@ -29,10 +29,7 @@ char *read_command(void)
 	if (nread == -1)
 	{
 		free(line);
-		if (nread == - 1)
-		{
-			exit(0);
-		}
+		exit(0);
 	}
 	return (line);
 }
