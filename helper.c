@@ -65,7 +65,7 @@ char **tokenize_command(char *command)
 }
  * execute_command - fork a child process to execute command
  *
- */
+ *
 void execute_command(char **command)
 {
 	pid_t child_pid;
@@ -91,7 +91,7 @@ void execute_command(char **command)
 		wait(&status);
 	}
 }
-/**
+
  * free_memory - free any dynamically allocated memory
  */
 void free_memory(char **command)
