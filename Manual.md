@@ -10,11 +10,11 @@ The Simple Shell is a versatile command-line interface that supports both intera
 2. **Enter Commands:** Once the terminal is open, you can execute the shell with typing ./hsh and press enter then you'll see a prompt (e.g., `$`). This is where you'll type your commands.
 **Starting the Shell**
 
-To start the shell, simply type `hsh` in your terminal (assuming you're using a Linux-based system). You'll see a prompt
+To start the shell, simply type `hsh` in your terminal prompt (assuming you're using a Linux-based system). You'll see a prompt
 (`$`) indicating that you're ready to enter commands.
 
 ```bash
-$ hsh
+$
 ```
 
 Pressing `Ctrl+D` will terminate the shell.
