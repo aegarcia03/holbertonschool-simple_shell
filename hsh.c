@@ -10,7 +10,7 @@ int main(void)
 	char *command;
 	const char* pathEnv;
 	
-	pathEnv = getenv("PATH");
+	pathEnv = _getenv("PATH");
 	if (!pathEnv)
 	{
 		printf("PATH environment variable not found.\n");
