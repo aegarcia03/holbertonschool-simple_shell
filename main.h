@@ -18,9 +18,6 @@ extern char **environ;
 
 
 int find_command(char *command, char *full_path, char **environ);
-int _snprintf(char *str, size_t size, const char *format, ...);
-char *_getenv(const char *name, char **environ);
-int _strncmp(const char *s1, const char *s2, size_t n);
 void display_prompt(void);
 char *read_command(void);
 void execute_command(char **command);
@@ -30,8 +27,5 @@ void sigint_handler(int sig);
 void print_env(void);
 char *find_path(char *command);
 char *_strtrim(char *str);
-char *_strcat(char *dest, char *src);
-char *_strcpy(char *dest, char *src);
-int _strlen(char *s);
 
 #endif /* MAIN_H */
