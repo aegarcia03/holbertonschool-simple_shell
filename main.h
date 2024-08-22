@@ -29,5 +29,8 @@ void sigint_handler(int sig);
 void print_env(void);
 char *find_path(char *command);
 char *_strtrim(char *str);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
 
 #endif /* MAIN_H */
