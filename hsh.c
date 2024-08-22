@@ -8,6 +8,14 @@ int main(void)
 {
 	char **tokens;
 	char *command;
+	const char* pathEnv;
+	
+	pathEnv = getenv("PATH");
+	if (!pathEnv)
+	{
+		printf("PATH environment variable not found.\n");
+		exit(1);
+	}
 
 	signal(SIGINT, sigint_handler);
 
