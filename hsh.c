@@ -22,6 +22,8 @@ int main(void)
 				free(command);
 				break;
 			}
+			_strtrim(command);
+
 			tokens = tokenize_command(command);
 			execute_command(tokens);
 			free_memory(tokens);
@@ -31,6 +33,8 @@ int main(void)
 	else
 	{	while((command = read_command()) != NULL)
 		{
+			_strtrim(command);
+
 			tokens = tokenize_command(command);
 			execute_command(tokens);
 			free_memory(tokens);

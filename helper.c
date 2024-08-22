@@ -21,8 +21,10 @@ char *read_command(void)
 	if (nread == -1)
 	{
 		free(line);
-		exit(0);
+		return NULL;
 	}
+	_strtrim(line);
+
 	return (line);
 }
 /**

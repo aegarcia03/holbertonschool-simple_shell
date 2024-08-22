@@ -1,32 +1,47 @@
 #include "main.h"
 /**
  * execute_command - ...
- * ...
- *
  */
 void execute_command(char **command)
 {
     pid_t child_pid;
     int status;
+    char *full_path;
 
-    if (command == NULL || command[0] == NULL)
+    if (command[0] == NULL)
     {
-        fprintf(stderr, "Error: Command is NULL or empty\n");
         return;
+    }
+
+
+    if (command[0][0] == '/' || command[0][0] == '.')
+    {
+
+        full_path = strdup(command[0]);
+    }
+    else
+    {
+
+        full_path = find_path(command[0]);
+        if (full_path == NULL)
+        {
+            fprintf(stderr, "./hsh: 1: %s: not found\n", command[0]);
+            return;
+        }
     }
 
     child_pid = fork();
     if (child_pid == -1)
     {
-        perror("Error child_pid");
+        perror("Error: Fork failed");
         exit(1);
     }
 
     if (child_pid == 0)
     {
-        if (execve(command[0], command, environ) == -1)
+        if (execve(full_path, command, environ) == -1)
         {
-            perror("Error: Command not found");
+            perror("Error: Command execution failed");
             exit(1);
         }
     }
@@ -34,5 +49,7 @@ void execute_command(char **command)
     {
         wait(&status);
     }
+
+    free(full_path);
 }
 
