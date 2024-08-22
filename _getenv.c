@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _getenv - Get the value of an environment variable
  * @name: Name of the environment variable
