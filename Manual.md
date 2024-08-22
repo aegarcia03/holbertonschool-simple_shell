@@ -53,8 +53,6 @@ $ exit
 * **Executing Programs:**
   * Type the name of the program you want to run. For example, `gedit` will open a text editor.
 
-**3. Basic Commands**
-
 Here are some basic commands to get you started:
 
 ### 1. Help
