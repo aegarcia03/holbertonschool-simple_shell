@@ -10,6 +10,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <signal.h>
+#include <stddef.h>
 
 extern char **environ;
 #define MAX_ARGS 64
