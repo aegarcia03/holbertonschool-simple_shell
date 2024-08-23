@@ -10,6 +10,8 @@ void execute_command(char **command)
 
     if (command[0] == NULL)
         return;
+    if (strcmp(command[0], "exit") == 0)
+    	exit(0);
 
     if (strcmp(command [0], "env") == 0)
     {
