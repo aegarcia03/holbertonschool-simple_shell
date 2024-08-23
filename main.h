@@ -17,6 +17,8 @@ extern char **environ;
 #define MAX_ARGS 64
 #define MAX_PATH 1024
 
+void handle_allocation_failure(char **tokens, size_t position);
+char **allocate_tokens(size_t size, char **tokens, size_t position);
 int is_builtin_command(char *command);
 void execute_builtin_command(char **command);
 int find_command(char *command, char *full_path, char **environ);

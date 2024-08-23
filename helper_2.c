@@ -2,13 +2,14 @@
 
 /**
 * sigint_handler - ...
+* @sig: ...
 */
 void sigint_handler(int sig)
 {
 	(void)sig;
 	write(STDOUT_FILENO, "\nSimpleShell$ ", 14);
 }
-/*
+/**
 * print_env - ...
 */
 void print_env(void)
@@ -22,10 +23,12 @@ void print_env(void)
 	env++;
 	}
 }
-/*
-* _strtrim - ...
-* Return: ...
-*/
+
+/** 
+ * _strtrim - ...
+ * @str: ...
+ * Return: ...
+ */
 char *_strtrim(char *str)
 {
 	char *start = str;

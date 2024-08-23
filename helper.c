@@ -10,7 +10,7 @@ void display_prompt(void)
 
 /**
  * read_command - Reads a command
- * 
+ *
  * Return: A string with the command
  * NULL if an error occurs.
  */
