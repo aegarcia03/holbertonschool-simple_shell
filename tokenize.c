@@ -58,4 +58,3 @@ char **tokenize_command(char *command)
     tokens[position] = NULL;
     return tokens;
 }
-

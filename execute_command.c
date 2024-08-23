@@ -1,4 +1,7 @@
 #include "main.h"
+
+int is_builtin_command(char *command);
+void execute_builtin_command(char **command);
 /**
  * execute_command - main module to read user input
  * @command: user input

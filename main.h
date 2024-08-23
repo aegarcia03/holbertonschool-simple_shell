@@ -13,10 +13,12 @@
 #include <stddef.h>
 
 extern char **environ;
+
 #define MAX_ARGS 64
 #define MAX_PATH 1024
 
-
+int is_builtin_command(char *command);
+void execute_builtin_command(char **command);
 int find_command(char *command, char *full_path, char **environ);
 void display_prompt(void);
 char *read_command(void);
