@@ -9,11 +9,13 @@ void execute_command(char **command)
     char *full_path;
 
     if (command[0] == NULL)
-    {
         return;
+
+    if (strcmp(command [0], "env") == 0)
+    {
+	    print_env();
+	    return;
     }
-
-
     if (command[0][0] == '/' || command[0][0] == '.')
     {
 
