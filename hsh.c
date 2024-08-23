@@ -11,6 +11,15 @@ int main(void)
 
 	signal(SIGINT, sigint_handler);
 
+
+/*	if (strcmp(command[0], "exit") == 0)
+	{
+		free(command);
+		exit_shell();
+		free(tokens);
+	}
+*/
+
 	if (isatty(STDIN_FILENO))
 	{
 		while (1)

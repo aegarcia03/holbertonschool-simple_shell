@@ -11,9 +11,9 @@ void execute_command(char **command)
     if (command[0] == NULL)
         return;
 
-    if (strcmp(command[0], "exit") == 0)
-   {	
-		free_memory(command);
+  if (strcmp(command[0], "exit") == 0)
+    {	
+	    free(command);
 	    exit_shell();
     }
 
