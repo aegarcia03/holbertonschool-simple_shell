@@ -21,6 +21,7 @@ void print_env(void)
 	write(STDOUT_FILENO, "\n", 1);
 	env++;
 	}
+}
 /*
 * _strtrim - ...
 * Return: ...
