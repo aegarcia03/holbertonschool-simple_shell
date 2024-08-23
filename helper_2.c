@@ -100,4 +100,11 @@ char *find_path(char *command)
     free(path);
     return NULL;
 }
-
+/**
+ * exit_shell - ...
+ *
+ */
+void exit_shell(void)
+{
+	exit(EXIT_SUCCESS);
+}

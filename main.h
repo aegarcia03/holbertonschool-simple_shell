@@ -27,5 +27,6 @@ void sigint_handler(int sig);
 void print_env(void);
 char *find_path(char *command);
 char *_strtrim(char *str);
+void exit_shell(void);
 
 #endif /* MAIN_H */
