@@ -12,7 +12,8 @@ void execute_command(char **command)
         return;
 
     if (strcmp(command[0], "exit") == 0)
-    {
+   {	
+		free_memory(command);
 	    exit_shell();
     }
 
@@ -58,5 +59,6 @@ void execute_command(char **command)
     }
 
     free(full_path);
+
 }
 
