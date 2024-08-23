@@ -1,14 +1,18 @@
 #include "main.h"
+
 /**
- * display_prompt - ...
+ * display_prompt - Displays the shell prompt.
  */
 void display_prompt(void)
 {
 	write(STDOUT_FILENO, "SimpleShell$ ", 13);
 }
-/*
- * read_command- ...
- *
+
+/**
+ * read_command - Reads a command
+ * 
+ * Return: A string with the command
+ * NULL if an error occurs.
  */
 char *read_command(void)
 {
@@ -27,8 +31,10 @@ char *read_command(void)
 
 	return (line);
 }
+
 /**
  * free_memory - free any dynamically allocated memory
+ * @command: A pointer to an array of strings to be freed.
  */
 void free_memory(char **command)
 {
