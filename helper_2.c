@@ -23,8 +23,7 @@ void print_env(void)
 	env++;
 	}
 }
-
-/** 
+/**
  * _strtrim - ...
  * @str: ...
  * Return: ...
